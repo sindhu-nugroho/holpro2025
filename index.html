@@ -1,252 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fantasy Inspired Landing</title>
-  <link rel="stylesheet" href="style.css"/>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <style>
-    /* hero start */
-    * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    }
-
-    body, html {
-    height: 100%;
-    font-family: 'Segoe UI', sans-serif;
-    }
-
-    #bgVideo {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -1;
-    object-fit: cover;
-    }
-
-    .overlay {
-    position: relative;
-    color: white;
-    height: 100vh;
-    background: rgba(50, 49, 55, 0.5);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 2rem;
-    }
-
-    header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.2rem;
-    }
-
-    .logo {
-    font-weight: bold;
-    letter-spacing: 2px;
-    }
-
-    .menu {
-    font-size: 2rem;
-    cursor: pointer;
-    }
-
-    .content {
-    max-width: 600px;
-    }
-
-    .content h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    }
-
-    button {
-    padding: 0.75rem 1.5rem;
-    background: transparent;
-    border: 2px solid white;
-    color: white;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: 0.3s;
-    }
-
-    button:hover {
-    background: white;
-    color: black;
-    }
-
-    .mute-icon {
-    position: absolute;
-    bottom: 2rem;
-    right: 2rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-    }
-    /* hero end */
-
-        .container {
-      display: flex;
-      flex-direction: row;
-      height: 100vh;
-      width: 100%;
-    }
-
-    .left-section {
-      flex: 1;
-      background-color: white;
-      padding: 4rem 3rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .left-section .logo {
-      margin-bottom: 3rem;
-    }
-
-    .left-section h1 {
-      font-size: 2.8rem;
-      margin-bottom: 1.5rem;
-      font-weight: 700;
-      color: black;
-    }
-
-    .left-section p {
-      color: gray;
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-    }
-
-    .left-section button {
-      padding: 0.8rem 1.5rem;
-      background: transparent;
-      border: 2px solid red;
-      color: black;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .left-section button:hover {
-      background: red;
-      color: white;
-    }
-
-    .right-section {
-      flex: 1;
-      background-color: red;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      padding: 2rem;
-    }
-
-    .right-section .top-bar {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      color: white;
-      font-weight: bold;
-      font-size: 1rem;
-    }
-
-    .right-section .logo-icon {
-      font-size: 4rem;
-      margin: auto;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fantasy Inspired Landing</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      /* hero start */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
 
-      .left-section, .right-section {
-        flex: unset;
+      body,
+      html {
+        height: 100%;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      #bgVideo {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1;
+        object-fit: cover;
+      }
+
+      .overlay {
+        position: relative;
+        color: white;
+        height: 100vh;
+        background: rgba(50, 49, 55, 0.5);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 2rem;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.2rem;
+      }
+
+      .logo {
+        font-weight: bold;
+        letter-spacing: 2px;
+      }
+
+      .menu {
+        font-size: 2rem;
+        cursor: pointer;
+      }
+
+      .content {
+        max-width: 600px;
+      }
+
+      .content h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      button {
+        padding: 0.75rem 1.5rem;
+        background: transparent;
+        border: 2px solid white;
+        color: white;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        background: white;
+        color: black;
+      }
+
+      .mute-icon {
+        position: absolute;
+        bottom: 2rem;
+        right: 2rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+      /* hero end */
+
+      .container {
+        display: flex;
+        flex-direction: row;
+        height: 100vh;
         width: 100%;
-        height: auto;
+      }
+
+      .left-section {
+        flex: 1;
+        background-color: white;
+        padding: 4rem 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .left-section .logo {
+        margin-bottom: 3rem;
       }
 
       .left-section h1 {
-        font-size: 2rem;
+        font-size: 2.8rem;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        color: black;
       }
 
       .left-section p {
+        color: gray;
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+      }
+
+      .left-section button {
+        padding: 0.8rem 1.5rem;
+        background: transparent;
+        border: 2px solid rgb(1, 37, 100);
+        color: black;
         font-size: 1rem;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .left-section button:hover {
+        background: rgb(1, 37, 100);
+        color: white;
+      }
+
+      .right-section {
+        flex: 1;
+        background: linear-gradient(to top right, rgb(1, 37, 100), #5389e6);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem;
       }
 
       .right-section .top-bar {
-        font-size: 0.9rem;
-        flex-direction: column;
-        gap: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        color: white;
+        font-weight: bold;
+        font-size: 1rem;
       }
 
       .right-section .logo-icon {
-        font-size: 3rem;
+        font-size: 4rem;
+        margin: auto;
       }
-    }
-  </style>
-</head>
-<body>
 
-  <video autoplay muted loop id="bgVideo">
-    <source src="hero.mp4" type="video/mp4">
-    Your browser does not support HTML5 video.
-  </video>
+      /* Responsive */
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+        }
 
-  <section class="overlay">
-    <header>
-      <div class="logo">Lands Between</div>
-      <div class="menu">☰</div>
-    </header>
+        .left-section,
+        .right-section {
+          flex: unset;
+          width: 100%;
+          height: auto;
+        }
 
-    <section class="content">
-      <h1>
-        The Lands Between was also home to the Primordial Crucible<br> 
-        where all life was once blended together.
-      </h1>
-      <button>The Work & Verticals</button>
+        .left-section h1 {
+          font-size: 2rem;
+        }
+
+        .left-section p {
+          font-size: 1rem;
+        }
+
+        .right-section .top-bar {
+          font-size: 0.9rem;
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        .right-section .logo-icon {
+          font-size: 3rem;
+        }
+      }
+
+      /* about image start */
+      .left-section .logo img,
+      .right-section .logo-icon img {
+        max-width: 50%;
+        height: auto;
+        display: block;
+        margin: auto;
+      }
+      /* about image end */
+    </style>
+  </head>
+  <body>
+    <video autoplay muted loop id="bgVideo">
+      <source src="hero.mp4" type="video/mp4" />
+      Your browser does not support HTML5 video.
+    </video>
+
+    <section class="overlay">
+      <header>
+        <div class="logo">Winterfell</div>
+        <div class="menu">☰</div>
+      </header>
+
+      <section class="content">
+        <h1>
+          the capital of the Kingdom of the North and the seat and the ancestral home of the royal House Stark.
+        </h1>
+        <button>More</button>
+      </section>
+
+      <section class="mute-icon" onclick="toggleMute()">
+        <i id="muteIcon" class="fas fa-volume-mute"></i>
+      </section>
     </section>
 
-    <section class="mute-icon" onclick="toggleMute()">
-      <i id="muteIcon" class="fas fa-volume-mute"></i>
+    <section class="container">
+      <section class="left-section">
+        <h1>Winterfell</h1>
+        <p>
+           the Kingdom of the North and the seat and the ancestral home of the royal House Stark. It is a very large castle located at the center of the North, from where the head of House Stark rules over his or her people.
+        </p>
+        <button>More</button>
+      </section>
+      <section class="right-section">
+        <div class="top-bar">
+          <span>All Categories</span>
+          <span>☰</span>
+        </div>
+        <div class="logo-icon"><img src="stark.png" alt="" /></div>
+        <!-- You can replace this with your actual white blob icon/logo -->
+      </section>
     </section>
-  </section>
 
-  <section class="container">
-    <section class="left-section">
-      <div class="logo">
-        <img src="logo.png" alt="Fantasy Logo" style="height: 40px;">
-      </div>
-      <h1>We’re a world leading product innovation team</h1>
-      <p>Collaborating with ambitious companies to create digital experiences used by billions everyday.</p>
-      <button>Our company</button>
-    </section>
-    <section class="right-section">
-      <div class="top-bar">
-        <span>All Categories</span>
-        <span>☰</span>
-      </div>
-      <div class="logo-icon">✤</div> <!-- You can replace this with your actual white blob icon/logo -->
-    </section>
-  </section>
+    <script>
+      const video = document.getElementById("bgVideo");
+      const icon = document.getElementById("muteIcon");
 
-  <script>
-    const video = document.getElementById('bgVideo');
-    const icon = document.getElementById('muteIcon');
-
-    function toggleMute() {
-      video.muted = !video.muted;
-      icon.className = video.muted ? 'fas fa-volume-mute' : 'fas fa-volume-up';
-    }
-  </script>
-</body>
+      function toggleMute() {
+        video.muted = !video.muted;
+        icon.className = video.muted
+          ? "fas fa-volume-mute"
+          : "fas fa-volume-up";
+      }
+    </script>
+  </body>
 </html>
