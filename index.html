@@ -51,7 +51,7 @@
         font-size: 1.2rem;
       }
 
-      .logo, .category-nav-bar{ /* adding class category-nav-bar */
+      .logo, .category{ /* adding class category-nav-bar */
         font-weight: bold;
         letter-spacing: 2px;
       }
@@ -209,6 +209,12 @@
           text-align: justify;
         }
         /* repair the text of content on mobile */
+
+        /* start of making the header turn into blue when enter the section 2 on mobile interface */
+        .logo.active, .menu.active, .category.active{
+          color: rgb(78, 134, 255);
+        }
+        /* end of making the header turn into blue when enter the section 2 on mobile interface */
       }
 
       /* about image start */
@@ -243,7 +249,7 @@
       <header id="header">
         <div class="logo">Winterfell</div>
         <div class="nav-right-section">
-          <div class="category-nav-bar">Categories</div> <!--Move categories to header-->
+          <div class="category">Categories</div> <!--Move categories to header-->
           <div class="menu">☰</div>
         </div>
       </header>
@@ -315,10 +321,14 @@
           for (const entry of entries) {
             if (entry.isIntersecting) {
               currentTarget = entry.target;
-              addColor(true);
+              addColor(true, '.logo');
+              addColor(true, '.menu');
+              addColor(true, '.category');
               window.addEventListener('scroll', watchTarget);
             } else {
-              addColor(false);
+              addColor(false, '.logo');
+              addColor(false, '.menu');
+              addColor(false, '.category');
               window.removeEventListener('scroll', watchTarget)
             }
           }
@@ -332,14 +342,18 @@
           const bounds = currentTarget.getBoundingClientRect();
 
           if (bounds.bottom < window.innerHeight - 80) {
-            addColor(false);
+            addColor(false, '.logo');
+            addColor(false, '.menu');
+            addColor(false, '.category');
           } else {
-            addColor(true);
+            addColor(true, '.logo');
+            addColor(true, '.menu');
+            addColor(true, '.category');
           }
         }
 
-        function addColor(add) {
-          const logo = document.querySelector('.logo');
+        function addColor(add, classSelector) {
+          const logo = document.querySelector(classSelector);
           if (add) {
             logo.classList.add('active');
           } else {
@@ -347,6 +361,7 @@
           }
         }
       });
+      /* end of making the winterfell turn into blue when enter section 2 */
     </script>
   </body>
 </html>
