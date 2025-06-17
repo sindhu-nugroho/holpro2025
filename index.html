@@ -69,9 +69,14 @@
       }
       /* end of making catogories next to menu */
 
+      /* start of style to change color of logo when he at section 2 */
+        .logo.active{
+          color: #5389e6;
+        }
+      /* end of style to change color of logo when he at section 2 */
       .content {
         max-width: 600px;
-        margin-top: 400px;
+        margin-top: 550px;
       }
 
       .content h1 {
@@ -200,7 +205,7 @@
         /* repair the text of content on mobile */
         .content h1 {
           font-size: 1rem;
-          margin-top: 25%;
+          margin-top: -15%;
           text-align: justify;
         }
         /* repair the text of content on mobile */
@@ -255,7 +260,7 @@
       </section>
     </section>
 
-    <section class="container" id="section2">
+    <section class="container" id="section2" changeTitle>
       <section class="left-section">
         <h1>Winterfell</h1>
         <p>
@@ -300,6 +305,48 @@
         }
       })
       /* start of making scroll animation */
+
+      /* start of making the winterfell turn into blue when enter section 2 */
+      window.addEventListener('load', (event) => {
+        const titleChanger = document.querySelectorAll('*[changeTitle]');
+        let currentTarget = null;
+
+        const Observer = new IntersectionObserver((entries, Observer) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              currentTarget = entry.target;
+              addColor(true);
+              window.addEventListener('scroll', watchTarget);
+            } else {
+              addColor(false);
+              window.removeEventListener('scroll', watchTarget)
+            }
+          }
+        }, { threshold: 0.15 });
+
+        for (const element of titleChanger) {
+          Observer.observe(element);
+        }
+
+        function watchTarget() {
+          const bounds = currentTarget.getBoundingClientRect();
+
+          if (bounds.bottom < window.innerHeight - 80) {
+            addColor(false);
+          } else {
+            addColor(true);
+          }
+        }
+
+        function addColor(add) {
+          const logo = document.querySelector('.logo');
+          if (add) {
+            logo.classList.add('active');
+          } else {
+            logo.classList.remove('active');
+          }
+        }
+      });
     </script>
   </body>
 </html>
