@@ -61,11 +61,12 @@
         cursor: pointer;
       }
 
-      /* start of styling the class menu and category if hovered and clicked*/
+      /* start of styling the class menu and category if hovered and clicked */
       .menu:hover, .category:hover {
         color: red;
         transition: all 0.3s ease;
       }
+      /* end of styling the class menu and category if hovered and clicked */
 
 
       /* start of making catogories next to menu */
@@ -82,7 +83,7 @@
         }
       /* end of style to change color of logo when he at section 2 */
 
-      /* Start of styling the navbar */
+      /* Start of styling the navbar for mobile */
       .navBar {
         position: fixed;
         top: 0;
@@ -101,9 +102,9 @@
         overflow-y: auto;
         z-index: -1; 
       }
-      /* Start of styling the navbar */
+      /* End of styling the navbar for mobile */
 
-      /* start of styling the items in navbar */
+      /* start of styling the items in navbar for mobile*/
       .navBar p {
         width: 100%;
         padding: 15px 20px;
@@ -127,7 +128,7 @@
         margin-top: 50px;
         padding: 2px 5px;
       }
-      /* end of styling the items in navbar */
+      /* end of styling the items in navbar for mobile*/
 
       .navBar.active { /* when the navbar active*/
         transform: translateX(0);
@@ -139,7 +140,7 @@
       }
 
       .content h1 {
-        font-size: 2rem;
+        font-size: 2vh;
         margin-bottom: 1rem;
       }
 
@@ -230,6 +231,11 @@
         font-size: 4rem;
         margin: auto;
       }
+      /* start of hidden the navMobile */
+      .navMobile {
+        display: none;
+      }
+      /* end of hidden the navMobile */
 
       /* Responsive */
       @media (max-width: 768px) {
@@ -274,6 +280,16 @@
           color: rgb(78, 134, 255);
         }
         /* end of making the header turn into blue when enter the section 2 on mobile interface */
+
+        /* start of toggle the navbar */
+        .navMobile {
+          display: flex;
+        }
+
+        .navDesktop {
+          display: none;
+        }
+        /* end of toggle the navbar */
       }
 
       /* about image start */
@@ -307,20 +323,30 @@
     <section class="overlay" id="section1">
       <header id="header">
         <div class="logo">Winterfell</div>
+        <!-- for dekstrop interface -->
+        <nav class="navDesktop">
+          <p>Home</a>
+          <p>About<p>
+          <p>History</p>
+          <p>Castle</p>
+          <p>Gallery</p>
+        </nav>
+
+        <!-- for mobile interface -->
         <div class="nav-right-section">
-          <div class="category">Categories</div> <!--Move categories to header-->
-          <div class="menu">☰</div>
+          <div class="category navMobile" >Categories</div> <!--Move categories to header-->
+          <div class="menu navMobile">☰</div>
         </div>
         
-      <section class="navBar">
-        <div>
-          <p>lorem</p>
-          <p>Ipsum</p>
-          <p>Dolor</p>
-          <p>Sit Amet</p>
-        </div>
-        
-      </section>
+        <section class="navBar navMobile">
+          <div>
+            <p>lorem</p>
+            <p>Ipsum</p>
+            <p>Dolor</p>
+            <p>Sit Amet</p>
+          </div>
+        </section>
+        <!-- for mobile interface -->
       </header>
 
       <section class="content">
