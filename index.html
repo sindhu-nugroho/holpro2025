@@ -135,14 +135,27 @@
       /* end of styling the items in navbar for mobile */
 
       /* start of styling the items in navbar for dekstop */
-        .navDekstop{
-          display: flex
+        .navDesktop{
+          display: flex;
+          gap: 2rem;
+          justify-content: flex-end;
+          width: 100%;
+        }
+
+        .navDesktop p {
+          transition: all 0.3s ease;
+          cursor: pointer;
+        }
+
+        .navDesktop p:hover { 
+          color: rgba(255,255,255,0.5);
+          transform: translateX(-3px);
         }
       /* end of styling the items in navbar for dekstop */
 
       .content {
         max-width: 600px;
-        margin-top: 400px;
+        margin-top: 550px;
       }
 
       .content h1 {
