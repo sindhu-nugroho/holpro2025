@@ -51,7 +51,7 @@
         font-size: 1.2rem;
       }
 
-      .logo {
+      .logo, .category-nav-bar{ /* adding class category-nav-bar */
         font-weight: bold;
         letter-spacing: 2px;
       }
@@ -61,8 +61,17 @@
         cursor: pointer;
       }
 
+      /* start of making catogories next to menu */
+      .nav-right-section{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      /* end of making catogories next to menu */
+
       .content {
         max-width: 600px;
+        margin-top: 550px;
       }
 
       .content h1 {
@@ -153,15 +162,6 @@
         padding: 2rem;
       }
 
-      .right-section .top-bar {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        color: white;
-        font-weight: bold;
-        font-size: 1rem;
-      }
-
       .right-section .logo-icon {
         font-size: 4rem;
         margin: auto;
@@ -188,12 +188,6 @@
           font-size: 1rem;
         }
 
-        .right-section .top-bar {
-          font-size: 0.9rem;
-          flex-direction: column;
-          gap: 0.5rem;
-        }
-
         .right-section .logo-icon {
           font-size: 3rem;
         }
@@ -208,6 +202,17 @@
         margin: auto;
       }
       /* about image end */
+
+      /* start of add sticky header */
+      #header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 15px;
+        width: 100%;
+        z-index: 1000;
+      }
+      /* end of sticky header */
     </style>
   </head>
   <body>
@@ -217,9 +222,12 @@
     </video>
 
     <section class="overlay" id="section1">
-      <header>
+      <header id="header">
         <div class="logo">Winterfell</div>
-        <div class="menu">☰</div>
+        <div class="nav-right-section">
+          <div class="category-nav-bar">Categories</div> <!--Move categories to header-->
+          <div class="menu">☰</div>
+        </div>
       </header>
 
       <section class="content">
@@ -243,10 +251,6 @@
         <button>More</button>
       </section>
       <section class="right-section">
-        <div class="top-bar">
-          <span>All Categories</span>
-          <span>☰</span>
-        </div>
         <div class="logo-icon"><img src="stark.png" alt="" /></div>
         <!-- You can replace this with your actual white blob icon/logo -->
       </section>
