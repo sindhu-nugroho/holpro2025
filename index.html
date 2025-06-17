@@ -51,15 +51,22 @@
         font-size: 1.2rem;
       }
 
-      .logo, .category{ /* adding class category-nav-bar */
+      .logo, .category{ /* adding class category */
         font-weight: bold;
         letter-spacing: 2px;
       }
 
-      .menu {
-        font-size: 2rem;
+      .menu, .category { /* adding class category */
+        font-size: 1.3rem;
         cursor: pointer;
       }
+
+      /* start of styling the class menu and category if hovered and clicked*/
+      .menu:hover, .category:hover {
+        color: red;
+        transition: all 0.3s ease;
+      }
+
 
       /* start of making catogories next to menu */
       .nav-right-section{
@@ -74,6 +81,58 @@
           color: #5389e6;
         }
       /* end of style to change color of logo when he at section 2 */
+
+      /* Start of styling the navbar */
+      .navBar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 250px;
+        height: 100%;
+        background-color: #00d0fa;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        transform: translateX(100%); /* Awalnya tersembunyi */
+        transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        overflow-y: auto;
+        z-index: -1; 
+      }
+      /* Start of styling the navbar */
+
+      /* start of styling the items in navbar */
+      .navBar p {
+        width: 100%;
+        padding: 15px 20px;
+        margin: 8px 0;
+        border-radius: 8px;
+        font-weight: bolder;
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.238);
+        box-sizing: border-box;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .navBar p:hover {
+        background-color: rgba(255,255,255,0.5);
+        transform: translateX(-3px);
+      }
+
+      .navBar div {
+        width: 100%;
+        margin-top: 50px;
+        padding: 2px 5px;
+      }
+      /* end of styling the items in navbar */
+
+      .navBar.active { /* when the navbar active*/
+        transform: translateX(0);
+      }
+
       .content {
         max-width: 600px;
         margin-top: 550px;
@@ -234,7 +293,7 @@
         left: 0;
         padding: 15px;
         width: 100%;
-        z-index: 1000;
+        z-index: 1500;
       }
       /* end of sticky header */
     </style>
@@ -252,6 +311,16 @@
           <div class="category">Categories</div> <!--Move categories to header-->
           <div class="menu">☰</div>
         </div>
+        
+      <section class="navBar">
+        <div>
+          <p>lorem</p>
+          <p>Ipsum</p>
+          <p>Dolor</p>
+          <p>Sit Amet</p>
+        </div>
+        
+      </section>
       </header>
 
       <section class="content">
@@ -283,10 +352,18 @@
     <script>
       const video = document.getElementById("bgVideo");
       const icon = document.getElementById("muteIcon");
+
       /* start of set variable for scroll animation */
       const section1 = document.getElementById("section1");
       const section2 = document.getElementById("section2");
       /* end of set variable for scroll animation */
+
+      /* start of set variabel for summon navbar */      
+      const navBarButton = document.querySelector('.menu');
+      const navBar = document.querySelector('.navBar');
+      const category = document.querySelector('.category')
+      /* end of set variabel for summon navbar */
+
 
       function toggleMute() {
         video.muted = !video.muted;
@@ -362,6 +439,18 @@
         }
       });
       /* end of making the winterfell turn into blue when enter section 2 */
+
+      /* start of making function to summon the navbar*/
+        navBarButton.addEventListener('click', () => {
+        navBar.classList.toggle('active');
+        console.log('tes')
+      });
+
+        category.addEventListener('click', () => {
+        navBar.classList.toggle('active');
+        console.log('tes')
+      });
+      /* start of making function to summon the navbar*/
     </script>
   </body>
 </html>
