@@ -51,22 +51,22 @@
         font-size: 1.2rem;
       }
 
-      .logo, .category{ /* adding class category */
+      .logo{ 
         font-weight: bold;
         letter-spacing: 2px;
       }
 
-      .menu, .category { /* adding class category */
+      .menu{ 
         font-size: 1.3rem;
         cursor: pointer;
       }
 
-      /* start of styling the class menu and category if hovered and clicked */
-      .menu:hover, .category:hover {
+      /* start of styling the class menu   if hovered and clicked */
+      .menu:hover{
         color: red;
         transition: all 0.3s ease;
       }
-      /* end of styling the class menu and category if hovered and clicked */
+      /* end of styling the class menu if hovered and clicked */
 
 
       /* start of making catogories next to menu */
@@ -128,19 +128,25 @@
         margin-top: 50px;
         padding: 2px 5px;
       }
-      /* end of styling the items in navbar for mobile*/
 
       .navBar.active { /* when the navbar active*/
         transform: translateX(0);
       }
+      /* end of styling the items in navbar for mobile */
+
+      /* start of styling the items in navbar for dekstop */
+        .navDekstop{
+          display: flex
+        }
+      /* end of styling the items in navbar for dekstop */
 
       .content {
         max-width: 600px;
-        margin-top: 550px;
+        margin-top: 400px;
       }
 
       .content h1 {
-        font-size: 2vh;
+        font-size: 2rem;
         margin-bottom: 1rem;
       }
 
@@ -276,7 +282,7 @@
         /* repair the text of content on mobile */
 
         /* start of making the header turn into blue when enter the section 2 on mobile interface */
-        .logo.active, .menu.active, .category.active{
+        .logo.active, .menu.active{
           color: rgb(78, 134, 255);
         }
         /* end of making the header turn into blue when enter the section 2 on mobile interface */
@@ -334,7 +340,6 @@
 
         <!-- for mobile interface -->
         <div class="nav-right-section">
-          <div class="category navMobile" >Categories</div> <!--Move categories to header-->
           <div class="menu navMobile">☰</div>
         </div>
         
@@ -387,7 +392,6 @@
       /* start of set variabel for summon navbar */      
       const navBarButton = document.querySelector('.menu');
       const navBar = document.querySelector('.navBar');
-      const category = document.querySelector('.category')
       /* end of set variabel for summon navbar */
 
 
@@ -426,12 +430,10 @@
               currentTarget = entry.target;
               addColor(true, '.logo');
               addColor(true, '.menu');
-              addColor(true, '.category');
               window.addEventListener('scroll', watchTarget);
             } else {
               addColor(false, '.logo');
               addColor(false, '.menu');
-              addColor(false, '.category');
               window.removeEventListener('scroll', watchTarget)
             }
           }
@@ -447,11 +449,9 @@
           if (bounds.bottom < window.innerHeight - 80) {
             addColor(false, '.logo');
             addColor(false, '.menu');
-            addColor(false, '.category');
           } else {
             addColor(true, '.logo');
             addColor(true, '.menu');
-            addColor(true, '.category');
           }
         }
 
@@ -466,17 +466,12 @@
       });
       /* end of making the winterfell turn into blue when enter section 2 */
 
-      /* start of making function to summon the navbar*/
+      /* start of making function to summon the navbar on mobile*/
         navBarButton.addEventListener('click', () => {
         navBar.classList.toggle('active');
         console.log('tes')
       });
-
-        category.addEventListener('click', () => {
-        navBar.classList.toggle('active');
-        console.log('tes')
-      });
-      /* start of making function to summon the navbar*/
+      /* start of making function to summon the navbar on mobile */
     </script>
   </body>
 </html>
