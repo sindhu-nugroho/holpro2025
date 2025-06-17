@@ -216,7 +216,7 @@
       Your browser does not support HTML5 video.
     </video>
 
-    <section class="overlay">
+    <section class="overlay" id="section1">
       <header>
         <div class="logo">Winterfell</div>
         <div class="menu">☰</div>
@@ -234,7 +234,7 @@
       </section>
     </section>
 
-    <section class="container">
+    <section class="container" id="section2">
       <section class="left-section">
         <h1>Winterfell</h1>
         <p>
@@ -255,6 +255,10 @@
     <script>
       const video = document.getElementById("bgVideo");
       const icon = document.getElementById("muteIcon");
+      /* start of set variable for scroll animation */
+      const section1 = document.getElementById("section1");
+      const section2 = document.getElementById("section2");
+      /* end of set variable for scroll animation */
 
       function toggleMute() {
         video.muted = !video.muted;
@@ -262,7 +266,23 @@
           ? "fas fa-volume-mute"
           : "fas fa-volume-up";
       }
+
+      /* start of making scroll animation */
+      let scroll = false
+      window.addEventListener('wheel', function(event){
+        // scroll ke bawah
+        if (!scroll && event.deltaY > 25){          
+          console.log('tes bawah')
+          section2.scrollIntoView({ behavior: 'smooth' });
+          scroll = false;
+        } else if (!scroll && event.deltaY < -25) {
+          // scroll ke atas
+          console.log('tes skroll atas')
+          section1.scrollIntoView({ behavior: 'smooth' })
+          scroll = false;
+        }
+      })
+      /* start of making scroll animation */
     </script>
-    
   </body>
 </html>
