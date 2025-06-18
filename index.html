@@ -314,7 +314,6 @@
       }
 
       /* about image start */
-      .left-section .logo img,
       .right-section .logo-icon img {
         max-width: 50%;
         height: auto;
@@ -322,6 +321,45 @@
         margin: auto;
       }
       /* about image end */
+
+      /* start of styling section3 */
+      #section3 {
+        display: flex;
+        height: 100vh;
+        width: 100%;
+      }
+
+      .sec3-left-section{
+        width: 50%;
+        height: 100vh;
+      }
+
+      .sec3-right-section{
+        width: 50%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        background-color: #f4f4f4;
+      }
+
+      .sec3-right-section p {
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+      }
+      /* start of styling section3 */
+
+
+      /* start of styling image into section3 */
+      .section3-image img{
+        width: 100%;
+        height: 100vh;
+        object-fit: cover; 
+        /* border: 10px solid black; */
+      }
+      /* end of styling image into section3 */
 
       /* start of add sticky header */
       #header {
@@ -395,6 +433,21 @@
       </section>
     </section>
 
+    <!-- start of adding section 3 to web -->
+    <section class="container" id="section3">
+      <section class="sec3-left-section">
+        <div class="section3-image"><img src="imageForSection3.jpg" alt="" /></div>
+      </section>
+      <section class="sec3-right-section">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit aspernatur repellat eum, exercitationem nulla architecto reiciendis iusto tenetur natus nisi, laudantium velit maiores quia, corporis voluptatem. Sunt vero blanditiis odio.
+        </p>
+      </section>
+    </section>
+    <!-- end of adding section 3 to web -->
+
+    
+
     <script>
       const video = document.getElementById("bgVideo");
       const icon = document.getElementById("muteIcon");
@@ -402,6 +455,8 @@
       /* start of set variable for scroll animation */
       const section1 = document.getElementById("section1");
       const section2 = document.getElementById("section2");
+      const section3 = document.getElementById("section3")
+      const section = [section1, section2, section3]
       /* end of set variable for scroll animation */
 
       /* start of set variabel for summon navbar */      
@@ -417,21 +472,65 @@
           : "fas fa-volume-up";
       }
 
+      /* start of making the array function to change index of section */
+      // function changeSection (direction) {
+      //   if (direction === 'down' && currentIndex < section.length - 1)
+      // }
+      
+
       /* start of making scroll animation */
-      let scroll = false
-      window.addEventListener('wheel', function(event){
-        // scroll ke bawah
-        if (!scroll && event.deltaY > 25){          
-          console.log('tes bawah')
-          section2.scrollIntoView({ behavior: 'smooth' });
-          scroll = false;
-        } else if (!scroll && event.deltaY < -25) {
-          // scroll ke atas
-          console.log('tes skroll atas')
-          section1.scrollIntoView({ behavior: 'smooth' })
-          scroll = false;
+      let scroll = false;
+      let currentIndex = 0; // add the current index for scroll animation
+
+        /* start of making the array function to change index of section */
+        function changeSection (direction) {
+          scroll = true;
+
+          if (direction === 'down' && currentIndex < section.length - 1) {
+            currentIndex++;
+          } else {
+            currentIndex--;
+          }
+
+          section[currentIndex].scrollIntoView({ behavior: 'smooth' })
+
+          setTimeout(() => {
+            scroll = false;
+          }, 5000);
         }
-      })
+        /* end of making the array function to change index of section */
+
+      // window.addEventListener('wheel', function(event){ THIS IS AN OLD FUNCTION 
+      //   // scroll ke bawah
+      //   if (!scroll && event.deltaY > 25){          
+      //     console.log('tes bawah')
+      //     section2.scrollIntoView({ behavior: 'smooth' });
+      //     scroll = false;
+      //   } else if (!scroll && event.deltaY < -25) {
+      //     // scroll ke atas
+      //     console.log('tes skroll atas')
+      //     section1.scrollIntoView({ behavior: 'smooth' })
+      //     scroll = false;
+      //   }
+      // })
+
+      // NEW ANIMATION
+      window.addEventListener('wheel', function (event) {
+        if (event.deltaY > 50) {
+          changeSection('down');
+          
+          // setTimeout(() => {
+          //   scroll = false;
+          // }, 1000)
+        } else if (event.deltaY < -50) {
+          changeSection('up');
+
+          // setTimeout(() => {
+          //   scroll = false;
+          // }, 1000)
+        }
+      });
+
       /* start of making scroll animation */
 
       /* start of making the winterfell turn into blue when enter section 2 */
