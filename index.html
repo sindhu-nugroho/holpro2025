@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fantasy Inspired Landing</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" link="style.css" />
     <script
       src="https://kit.fontawesome.com/a076d05399.js"
       crossorigin="anonymous"
@@ -380,6 +380,24 @@
       }
       /* start of styling section3 */
 
+      /* start of styling section4 */
+      #section4 {
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(0, 0, 0); 
+        display: flex;
+        justify-content: center; 
+        align-items: center;     
+      }
+
+      #section4 q {
+      font-size: 2rem;
+      color: white;   
+      text-align: center;
+      max-width: 80%;  
+      }
+      /* end of styling section4 */
+
 
       /* start of styling image into section3 */
       .section3-image img{
@@ -401,7 +419,7 @@
       }
       /* end of sticky header */
 
-      /* Start of stling navbar when they comes to the section 3 */
+      /* Start of styling navbar when they comes to the section 3 */
       .specialColor {
         color: red;
       }
@@ -416,7 +434,18 @@
         transform: translateX(-3px);
         font-weight: 500;
       }
-      /* end of stling navbar when they comes to the section 3 */
+      /* end of styling navbar when they comes to the section 3 */
+
+      /* Start of styling navbar when they comes to the section 1 */
+      .defaultColor {
+        color: rgb(255, 255, 255);
+      }
+
+      .defaultColor p {
+          transition: all 0.3s ease;
+          cursor: pointer;
+        }
+      /* end of styling navbar when they comes to the section 1 */
     </style>
   </head>
   <body>
@@ -492,6 +521,14 @@
     </section>
     <!-- end of adding section 3 to web -->
 
+    <!-- start of adding section footer to web -->
+    <section class="container" id="section4" changeTitle>
+      <div id="mainSect4">
+        <q>Fortis Fortuna Adiuvat</q>
+      </div>
+    </section>
+    <!-- start of adding section footer to web -->
+
     <script>
       const video = document.getElementById("bgVideo");
       const icon = document.getElementById("muteIcon");
@@ -499,8 +536,9 @@
       /* start of set variable for scroll animation */
       const section1 = document.getElementById("section1");
       const section2 = document.getElementById("section2");
-      const section3 = document.getElementById("section3")
-      const section = [section1, section2, section3]
+      const section3 = document.getElementById("section3");
+      const section4 = document.getAnimations("section4");
+      const section = [section1, section2, section3, section4];
       /* end of set variable for scroll animation */
 
       /* start of set variabel for summon navbar */      
@@ -516,10 +554,21 @@
           : "fas fa-volume-up";
       }
 
+      /* start of disabling the scroll */
+      function disableScroll() {
+        /*untuk cegah scroll*/
+      //   window.addEventListener('wheel', preventScroll, { passive: false });
+      //   window.addEventListener('touchmove', preventScroll, { passive: false });        
+        console.log("bastian becik")
+      }
+
+      function enableScroll() {
+        document.body.style.overflow = '';
+        console.log("bastian ala")
+      }
+      /* end of disabling the scroll */
+
       /* start of making the array function to change index of section */
-      // function changeSection (direction) {
-      //   if (direction === 'down' && currentIndex < section.length - 1)
-      // }
       
 
       /* start of making scroll animation */
@@ -529,6 +578,7 @@
         /* start of making the array function to change index of section */
         function changeSection (direction) {
           scroll = true;
+          disableScroll();
 
           if (direction === 'down' && currentIndex < section.length - 1) {
             currentIndex++;
@@ -540,6 +590,7 @@
 
           setTimeout(() => {
             scroll = false;
+            enableScroll();
           }, 5000);
         }
         /* end of making the array function to change index of section */
@@ -619,14 +670,20 @@
           const logo = document.querySelector(classSelector);
           if (add) {
             if (currentTarget.id ===  'section2') {
-              logo.classList.add('active')
-              logo.classList.remove('specialColor')
+              logo.classList.add('active');
+              logo.classList.remove('specialColor');
+              logo.classList.remove('defaultColor');
+              console.log('lagi di section 2');
             } else if (currentTarget.id === 'section3'){
               logo.classList.add('specialColor');
               logo.classList.remove('active');
-            } else if (currentTarget.id === 'section1'){
+              console.log('lagi di section 3')
+              logo.classList.remove('defaultColor');
+            } else{
               logo.classList.remove('active');
               logo.classList.remove('specialColor');
+              console.log('lagi di section 1');
+              logo.classList.add("defaultColor");
             }
           }
         }
