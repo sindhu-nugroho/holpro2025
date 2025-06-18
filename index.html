@@ -333,7 +333,6 @@
 
         .sec3-right-section{
           width: 100%;
-
         }
 
         .sec3-right-section p {
@@ -342,7 +341,29 @@
           text-align: center;
         }
       /* end of styling the section 3 on mobile interface */
+
+      /* start of styling section footer to mobile */
+        #sectionFooter {
+          flex-direction: block;
+          width: 110vh;
+        }
+
+        .footer-left-section, .footer-right-section {
+          width: 100%;
+          height: 50vh;
+          display: flex;
+        }
+
+        .footer-right-section p,
+        .footer-left-section h1{
+          font-size: 1rem;
+          max-width: 90%;
+        }
+
+      /* end of styling section footer to mobile */
+
       }
+
 
       /* about image start */
       .right-section .logo-icon img {
@@ -378,7 +399,7 @@
         font-weight: bold;
         text-align: center;
       }
-      /* start of styling section3 */
+      /* end of styling section3 */
 
       /* start of styling section4 */
       #section4 {
@@ -398,6 +419,35 @@
       }
       /* end of styling section4 */
 
+      /* start of styling section footer */
+      #sectionFooter{
+        display: flex;
+      }
+
+      .footer-left-section {
+        width: 50%;
+        background-color: green;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center;
+      }
+
+      .footer-right-section {
+        width: 50%;
+        background-color: blueviolet;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center;
+      }
+
+      .footer-left-section h1,
+      .footer-right-section p {
+        text-align: center;
+        font-size: 1rem;
+      }
+      /* end of styling section footer */
 
       /* start of styling image into section3 */
       .section3-image img{
@@ -521,13 +571,28 @@
     </section>
     <!-- end of adding section 3 to web -->
 
-    <!-- start of adding section footer to web -->
+    <!-- start of adding section 4 to web -->
     <section class="container" id="section4" changeTitle>
       <div id="mainSect4">
         <q>Fortis Fortuna Adiuvat</q>
       </div>
     </section>
+    <!-- start of adding section 4 to web -->
+
     <!-- start of adding section footer to web -->
+    <section class="container" id="sectionFooter" changeTitle>
+      <section class="footer-left-section">
+        <h1>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel reprehenderit deserunt quasi ullam voluptas possimus repudiandae quidem distinctio! Odit, eius. Vitae harum perferendis voluptate rem nostrum sunt, molestiae ab. Dignissimos!
+        </h1>
+      </section>
+      <section class="footer-right-section">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit aspernatur repellat eum, exercitationem nulla architecto reiciendis iusto tenetur natus nisi, laudantium velit maiores quia, corporis voluptatem. Sunt vero blanditiis odio.
+        </p>
+      </section>    
+    </section>
+    <!-- end of adding section footer to web -->
 
     <script>
       const video = document.getElementById("bgVideo");
@@ -563,7 +628,7 @@
       }
 
       function enableScroll() {
-        document.body.style.overflow = '';
+        // document.body.style.overflow = '';
         console.log("bastian ala")
       }
       /* end of disabling the scroll */
