@@ -602,8 +602,9 @@
       const section1 = document.getElementById("section1");
       const section2 = document.getElementById("section2");
       const section3 = document.getElementById("section3");
-      const section4 = document.getAnimations("section4");
-      const section = [section1, section2, section3, section4];
+      const section4 = document.getElementById("section4");
+      const sectionFooter = document.getElementById("sectionFooter")
+      const section = [section1, section2, section3, section4, sectionFooter];
       /* end of set variable for scroll animation */
 
       /* start of set variabel for summon navbar */      
@@ -622,19 +623,22 @@
       /* start of disabling the scroll */
       function disableScroll() {
         /*untuk cegah scroll*/
-      //   window.addEventListener('wheel', preventScroll, { passive: false });
-      //   window.addEventListener('touchmove', preventScroll, { passive: false });        
+        window.addEventListener('wheel', preventScroll, { passive: false });
+        window.addEventListener('touchmove', preventScroll, { passive: false });        
         console.log("bastian becik")
       }
 
       function enableScroll() {
         // document.body.style.overflow = '';
         console.log("bastian ala")
+        window.addEventListener('wheel', preventScroll, { passive: true });
+        window.addEventListener('touchmove', preventScroll, { passive: true });   
       }
-      /* end of disabling the scroll */
 
-      /* start of making the array function to change index of section */
-      
+      function preventScroll(e){
+        e.preventDefault();
+      }
+      /* end of disabling the scroll */      
 
       /* start of making scroll animation */
       let scroll = false;
@@ -642,6 +646,7 @@
 
         /* start of making the array function to change index of section */
         function changeSection (direction) {
+          if (scroll) return;
           scroll = true;
           disableScroll();
 
@@ -656,44 +661,24 @@
           setTimeout(() => {
             scroll = false;
             enableScroll();
-          }, 5000);
+          }, 1000);
         }
         /* end of making the array function to change index of section */
 
-      // window.addEventListener('wheel', function(event){ THIS IS AN OLD FUNCTION 
-      //   // scroll ke bawah
-      //   if (!scroll && event.deltaY > 25){          
-      //     console.log('tes bawah')
-      //     section2.scrollIntoView({ behavior: 'smooth' });
-      //     scroll = false;
-      //   } else if (!scroll && event.deltaY < -25) {
-      //     // scroll ke atas
-      //     console.log('tes skroll atas')
-      //     section1.scrollIntoView({ behavior: 'smooth' })
-      //     scroll = false;
-      //   }
-      // })
 
       // NEW ANIMATION
       window.addEventListener('wheel', function (event) {
+        if (scroll) return;
         if (event.deltaY > 50) {
           changeSection('down');
-          
-          // setTimeout(() => {
-          //   scroll = false;
-          // }, 1000)
         } else if (event.deltaY < -50) {
           changeSection('up');
-
-          // setTimeout(() => {
-          //   scroll = false;
-          // }, 1000)
         }
-      });
+      }, { passive: false });
 
-      /* start of making scroll animation */
+      /* end of making scroll animation */
 
-      /* start of making the winterfell turn into blue when enter section 2 */
+      /* start of making the winterfell turn into blue when enter other section */
       window.addEventListener('load', (event) => {
         const titleChanger = document.querySelectorAll('*[changeTitle]');
         let currentTarget = null;
@@ -705,12 +690,10 @@
               addColor(true, '.logo');
               addColor(true, '.menu');
               addColor(true, '.navDesktop');
-              window.addEventListener('scroll', watchTarget);
             } else {
               addColor(false, '.logo');
               addColor(false, '.menu');
               addColor(false, '.navDesktop');
-              window.removeEventListener('scroll', watchTarget)
             }
           }
         }, { threshold: 0.15 });
