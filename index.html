@@ -158,12 +158,12 @@
 
       .content {
         max-width: 600px;
-        margin-top: 550px;
+        /* margin-top: 70vh; */
       }
 
       .content h1 {
         font-size: 2rem;
-        margin-top: calc(100% - 38rem);
+        margin-top: 70vh;
         text-align: justify;
         /* color: red; */
       }
@@ -255,6 +255,7 @@
         font-size: 4rem;
         margin: auto;
       }
+      
       /* start of hidden the navMobile */
       .navMobile {
         display: none;
@@ -265,6 +266,10 @@
       @media (max-width: 768px) {
         .container {
           flex-direction: column;
+        }
+
+        #section1 {
+          border: 10px solid pink;
         }
 
         .left-section,
@@ -294,7 +299,7 @@
         /* repair the text of content on mobile */
         .content h1 {
           font-size: 1rem;
-          margin-top: -15%;
+          margin-top: 70vh;
           text-align: justify;
         }
         /* repair the text of content on mobile */
@@ -341,27 +346,6 @@
           text-align: center;
         }
       /* end of styling the section 3 on mobile interface */
-
-      /* start of styling section footer to mobile */
-        #sectionFooter {
-          flex-direction: block;
-          width: 110vh;
-        }
-
-        .footer-left-section, .footer-right-section {
-          width: 100%;
-          height: 50vh;
-          display: flex;
-        }
-
-        .footer-right-section p,
-        .footer-left-section h1{
-          font-size: 1rem;
-          max-width: 90%;
-        }
-
-      /* end of styling section footer to mobile */
-
       }
 
 
@@ -422,30 +406,36 @@
       /* start of styling section footer */
       #sectionFooter{
         display: flex;
-      }
-
-      .footer-left-section {
-        width: 50%;
+        width: 100%;
         background-color: green;
         display: flex;
         flex-direction: column;
         justify-content: center; 
         align-items: center;
+        height: 10vh;
       }
 
-      .footer-right-section {
-        width: 50%;
-        background-color: blueviolet;
+      .footerList {
         display: flex;
-        flex-direction: column;
-        justify-content: center; 
+        justify-content: center;
         align-items: center;
+        gap: 1.5rem;
+        list-style: none;
       }
 
-      .footer-left-section h1,
-      .footer-right-section p {
-        text-align: center;
-        font-size: 1rem;
+      .footerList li {
+        display: flex;
+        align-items: center;
+        font-size: 1.3rem;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+      }
+
+      .footerList img {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+        cursor: pointer;
       }
       /* end of styling section footer */
 
@@ -581,16 +571,11 @@
 
     <!-- start of adding section footer to web -->
     <section class="container" id="sectionFooter" changeTitle>
-      <section class="footer-left-section">
-        <h1>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel reprehenderit deserunt quasi ullam voluptas possimus repudiandae quidem distinctio! Odit, eius. Vitae harum perferendis voluptate rem nostrum sunt, molestiae ab. Dignissimos!
-        </h1>
-      </section>
-      <section class="footer-right-section">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit aspernatur repellat eum, exercitationem nulla architecto reiciendis iusto tenetur natus nisi, laudantium velit maiores quia, corporis voluptatem. Sunt vero blanditiis odio.
-        </p>
-      </section>    
+      <ul class="footerList">
+        <li>Find Us</li>
+        <li><img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="igLogo"></li>
+        <li><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="ytLogo"></li>
+      </ul>
     </section>
     <!-- end of adding section footer to web -->
 
@@ -730,7 +715,7 @@
             } else{
               logo.classList.remove('active');
               logo.classList.remove('specialColor');
-              console.log('lagi di section 1');
+              console.log('lagi di section lain');
               logo.classList.add("defaultColor");
             }
           }
