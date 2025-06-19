@@ -268,10 +268,6 @@
           flex-direction: column;
         }
 
-        #section1 {
-          border: 10px solid pink;
-        }
-
         .left-section,
         .right-section {
           flex: unset;
@@ -279,11 +275,11 @@
           height: auto;
         }
 
-        /* start of make the height of left section on mobile seems correct */
+        /* start of make the height of left section 2 on mobile seems correct */
         .left-section{
           height: 100%;
         }
-        /* end of make the height of left section on mobile seems correct */
+        /* end of make the height of left section 2 on mobile seems correct */
         .left-section h1 {
           font-size: 2rem;
         }
@@ -494,7 +490,7 @@
       Your browser does not support HTML5 video.
     </video>
 
-    <section class="overlay" id="section1">
+    <section class="overlay" id="section1" changeTitle>
       <header id="header">
         <div class="logo">Winterfell</div>
         <!-- for dekstrop interface -->
@@ -637,8 +633,10 @@
 
           if (direction === 'down' && currentIndex < section.length - 1) {
             currentIndex++;
-          } else {
+          } else if (direction === 'up' && currentIndex > 0) {
             currentIndex--;
+          } else {
+            console.error('index\'e udah nol')
           }
 
           section[currentIndex].scrollIntoView({ behavior: 'smooth' })
@@ -651,7 +649,7 @@
         /* end of making the array function to change index of section */
 
 
-      // NEW ANIMATION
+      /* start of making scroll animation */
       window.addEventListener('wheel', function (event) {
         if (scroll) return;
         if (event.deltaY > 50) {
@@ -660,10 +658,9 @@
           changeSection('up');
         }
       }, { passive: false });
-
       /* end of making scroll animation */
 
-      /* start of making the winterfell turn into blue when enter other section */
+      /* start of making the winterfell turn into other colors when enter other section */
       window.addEventListener('load', (event) => {
         const titleChanger = document.querySelectorAll('*[changeTitle]');
         let currentTarget = null;
@@ -715,13 +712,13 @@
             } else{
               logo.classList.remove('active');
               logo.classList.remove('specialColor');
-              console.log('lagi di section lain');
+              console.log('lagi di section 1 atau yang lain');
               logo.classList.add("defaultColor");
             }
           }
         }
       });
-      /* end of making the winterfell turn into blue when enter section 2 */
+      /* end of making the winterfell turn into other colours when enter section 2 */
 
       /* start of making function to summon the navbar on mobile*/
         navBarButton.addEventListener('click', () => {
