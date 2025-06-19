@@ -266,6 +266,7 @@
       @media (max-width: 768px) {
         .container {
           flex-direction: column;
+        
         }
 
         .left-section,
@@ -277,9 +278,10 @@
 
         /* start of make the height of left section 2 on mobile seems correct */
         .left-section{
-          height: 100%;
+          height: 100vh;
         }
         /* end of make the height of left section 2 on mobile seems correct */
+        
         .left-section h1 {
           font-size: 2rem;
         }
@@ -318,7 +320,7 @@
 
         /* start of styling the section 3 on mobile interface */
         #section3 {
-          flex-direction: block;
+          flex-direction: column;
         }
 
         .sec3-left-section, .sec3-right-section{
@@ -632,14 +634,30 @@
           disableScroll();
 
           if (direction === 'down' && currentIndex < section.length - 1) {
-            currentIndex++;
+            /* start of fixing the scroll animation for mobile */
+            if (currentIndex === 0 & window.innerWidth <= 768) {
+              currentIndex++
+              window.scrollBy({
+                top: 745,
+                behavior: 'smooth'
+              });
+              setTimeout(() => {
+                scroll = false;
+                enableScroll();
+              }, 500);
+              return;
+            } else {
+              currentIndex++;
+            }
+            /* end of fixing the scroll animation for mobile */
           } else if (direction === 'up' && currentIndex > 0) {
             currentIndex--;
           } else {
             console.error('index\'e udah nol')
           }
 
-          section[currentIndex].scrollIntoView({ behavior: 'smooth' })
+          const targetPost = section[currentIndex].offsetTop;
+          window.scrollTo({ top: targetPost, behavior: 'smooth' });
 
           setTimeout(() => {
             scroll = false;
