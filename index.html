@@ -370,9 +370,9 @@
         }
 
         .footer-middle-section {
-          width: 100%;
-          margin-top: 0;
-          margin-left: -30vh;
+          width: 40%;
+          /* margin-top: 0;
+          margin-left: -30vh; */
         }
 
         .subNav {
@@ -387,9 +387,12 @@
         }
 
         .footer-middle-section nav {
+          display: flex;
+          flex-direction: column;
           align-items: center;
           padding: 0;
           gap: 0.5rem;
+          border: 1px solid black;
         }
 
         .menu-footer p {
@@ -397,16 +400,34 @@
         }
 
         .footer-right-section {
-          width: 30vh;
-          margin-top: 0;
+          width: 15%;
           /* font-size: 1rem; */
           text-align: justify;
           /* height: 10vh; */
+        
         }
 
         .footer-right-section p {
-          text-align: justify;
-          font-size: 20px;
+          /* text-align: justify; */
+          margin-top: -10px;
+          font-size: 1rem;
+        }
+
+        .footer-bottom-section-atMobile {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: start;
+          width: 100%;
+          /* margin-top: 0.5rem; */
+          gap: 1rem;
+          /* padding: 0; */
+          align-items: stretch;
+          /* grid-template-columns: 40% 55%; */
+        }
+
+        #sectionFooter, .footer-bottom-section-atMobile {
+          padding: 0;
         }
       /* end oof section footer styling for mobile */
 
@@ -469,15 +490,18 @@
 
       /* start of styling section footer */
       #sectionFooter{
-        display: flex;
         width: 100%;
         background-color: white;
-        display: flex;
         height: auto;
-        justify-content: space-evenly;
-        align-items: auto;
-        padding: 4rem;
-        gap: 4rem;
+        /* margin-left: 100px; */
+      }
+
+      #sectionFooter, .footer-bottom-section-atMobile {
+        display: flex;
+        justify-content: space-around;
+        align-items: stretch;
+        padding: 2rem;
+        margin: 0 auto;
       }
 
       .footer-left-section {
@@ -537,7 +561,7 @@
         height: 100%;
         font-size: 1.2rem;
         width: 50%;
-        margin-top: 100px;
+        margin-top: 20px;
       }
 
       .footer-right-section p {
@@ -683,20 +707,22 @@
           Gundam: Iron Blooded Orphans atau Gundam: Tekketsu no Orphans; merupakan sebuah series Gundam yang menceritakan kisah tentang Mika, seseorang remaja yang menggunakan Gundam sebagai alat bertahan hidup di dunianya yang kejam, berbeda dengan series Gundam lain yang sering menceritakan bahwa tokoh utama yang mengendarai Gundam bertujuan untuk balas dendam ataupun menjadi yang terkuat. Pada series ini Mika menggunakan Gundam semata-mata hanya untuk bertahan hidup  
         </p>
       </section>  
-      <section class="footer-middle-section">
-        <h2 class="subNav">
-          Menu
-        </h2>
-        <nav class="menu-footer">
-          <p>Home</a>
-          <p>About<p>
-          <p>History</p>
-          <p>Castle</p>
-          <p>Gallery</p>
-        </nav>
-      </section>
-      <section class="footer-right-section">
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque ea non obcaecati consectetur nihil nam vero odio sit facilis nesciunt molestiae, excepturi aperiam corporis eligendi error dolores blanditiis voluptate similique.</p>
+      <section class="footer-bottom-section-atMobile">
+        <section class="footer-middle-section">
+          <h2 class="subNav">
+            Menu
+          </h2>
+          <nav class="menu-footer">
+            <p>Home</a>
+            <p>About<p>
+            <p>History</p>
+            <p>Castle</p>
+            <p>Gallery</p>
+          </nav>
+        </section>
+        <section class="footer-right-section">
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque ea non obcaecati consectetur nihil nam vero odio sit facilis nesciunt molestiae, excepturi aperiam corporis eligendi error dolores blanditiis voluptate similique.</p>
+        </section>
       </section>
     </section>
     <!-- end of adding section footer to web -->
