@@ -629,11 +629,11 @@
         <div class="logo">Winterfell</div>
         <!-- for dekstrop interface -->
         <nav class="navDesktop">
-          <p>Home</a>
-          <p>About<p>
-          <p>History</p>
-          <p>Castle</p>
-          <p>Gallery</p>
+          <p target="section1">Home</p>
+          <p target="section2">About</p>
+          <p target="section3">Gundam</p>
+          <p target="section4">Quotes</p>
+          <p target="sectionFooter">Footer</p>
         </nav>
 
         <!-- for mobile interface -->
@@ -643,10 +643,11 @@
         
         <section class="navBar navMobile">
           <div>
-            <p>lorem</p>
-            <p>Ipsum</p>
-            <p>Dolor</p>
-            <p>Sit Amet</p>
+          <p target="section1">Home</p>
+          <p target="section2">About</p>
+          <p target="section3">Gundam</p>
+          <p target="section4">Quotes</p>
+          <p target="sectionFooter">Footer</p>
           </div>
         </section>
         <!-- for mobile interface -->
@@ -713,11 +714,11 @@
             Menu
           </h2>
           <nav class="menu-footer">
-            <p>Home</a>
-            <p>About<p>
-            <p>History</p>
-            <p>Castle</p>
-            <p>Gallery</p>
+          <p target="section1">Home</p>
+          <p target="section2">About</p>
+          <p target="section3">Gundam</p>
+          <p target="section4">Quotes</p>
+          <p target="sectionFooter">Footer</p>
           </nav>
         </section>
         <section class="footer-right-section">
@@ -896,6 +897,28 @@
         console.log('tes')
       });
       /* end of making function to summon the navbar on mobile */
+
+      /* start of making smooth animation to scrolling using navbar */
+      window.addEventListener('DOMContentLoaded', () => {
+        const navItems = document.querySelectorAll('.navDesktop p, .navMobile p, .menu-footer p');
+
+        navItems.forEach(item => {
+        item.addEventListener('click', () => {
+        const targetId = item.getAttribute('target');
+        const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+              targetSection.scrollIntoView({
+                behavior: 'smooth'
+              });
+              console.log("icikiwir")
+            }
+          });
+        });
+      });
+      /* start of making smooth animation to scrolling using navbar */
+
+
     </script>
   </body>
 </html>
