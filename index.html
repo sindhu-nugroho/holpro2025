@@ -10,71 +10,90 @@
       crossorigin="anonymous"
     ></script>
     <style>
-      /* hero start */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+      /* Start of global styling */
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        
+        body,
+        html {
+          height: 100%;
+          font-family: "Segoe UI", sans-serif;
+        }
+      /* End of global styling */
 
-      body,
-      html {
-        height: 100%;
-        font-family: "Segoe UI", sans-serif;
-      }
 
-      #bgVideo {
-        position: fixed;
-        right: 0;
-        bottom: 0;
-        min-width: 100%;
-        min-height: 100%;
-        z-index: -1;
-        object-fit: cover;
-      }
+      /* start of background video styling */
+        #bgVideo {
+          position: fixed;
+          right: 0;
+          bottom: 0;
+          min-width: 100%;
+          min-height: 100%;
+          z-index: -1;
+          object-fit: cover;
+        }
+      /* end of background video styling */
 
-      .overlay {
-        position: relative;
-        color: white;
-        height: 100vh;
-        background: rgba(50, 49, 55, 0.5);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 2rem;
-      }
+      
+      /* start of styling the header */
+        .overlay {
+          position: relative;
+          color: white;
+          height: 100vh;
+          background: rgba(50, 49, 55, 0.5);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding: 2rem;
+        }
 
-      header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 1.2rem;
-      }
+        header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 1.2rem;
+        }
 
-      .logo{ 
-        font-weight: bold;
-        letter-spacing: 2px;
-      }
+        .logo{ 
+          font-weight: bold;
+          letter-spacing: 2px;
+        }
 
-      .menu{ 
-        font-size: 1.3rem;
-        cursor: pointer;
-      }
+        .menu{ 
+          font-size: 1.3rem;
+          cursor: pointer;
+        }
+      /* end of styling the header */
 
-      /* start of styling the class menu   if hovered and clicked */
-      .menu:hover{
-        color: red;
-        transition: all 0.3s ease;
-      }
+
+      /* start of add sticky header */
+        #header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          padding: 15px;
+          width: 100%;
+          z-index: 1500;
+        }
+      /* end of sticky header */
+
+      /* start of styling the class menu if hovered and clicked */
+        .menu:hover{
+          color: red;
+          transition: all 0.3s ease;
+        }
       /* end of styling the class menu if hovered and clicked */
 
 
-      /* start of making catogories next to menu */
-      .nav-right-section{
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-      }
+      /* start of making categories next to menu */
+        .nav-right-section{
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+        }
       /* end of making catogories next to menu */
 
       /* start of style to change color of logo when he at section 2 */
@@ -83,58 +102,56 @@
         }
       /* end of style to change color of logo when he at section 2 */
 
-      /* start of style the color of header to change color when they enter the section 3*/
-      /* .logo. */
 
       /* Start of styling the navbar for mobile */
-      .navBar {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 250px;
-        height: 100%;
-        background-color: #00d0fa;
-        color: white;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        transform: translateX(100%); /* Awalnya tersembunyi */
-        transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        overflow-y: auto;
-        z-index: -1; 
-      }
+        .navBar {
+          position: fixed;
+          top: 0;
+          right: 0;
+          width: 250px;
+          height: 100%;
+          background-color: #00d0fa;
+          color: white;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          transform: translateX(100%); /* Awalnya tersembunyi */
+          transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          overflow-y: auto;
+          z-index: -1; 
+        }
       /* End of styling the navbar for mobile */
 
       /* start of styling the items in navbar for mobile*/
-      .navBar p {
-        width: 100%;
-        padding: 15px 20px;
-        margin: 8px 0;
-        border-radius: 8px;
-        font-weight: bolder;
-        cursor: pointer;
-        background-color: rgba(255, 255, 255, 0.238);
-        box-sizing: border-box;
-        text-align: center;
-        transition: all 0.3s ease;
-      }
+        .navBar p {
+          width: 100%;
+          padding: 15px 20px;
+          margin: 8px 0;
+          border-radius: 8px;
+          font-weight: bolder;
+          cursor: pointer;
+          background-color: rgba(255, 255, 255, 0.238);
+          box-sizing: border-box;
+          text-align: center;
+          transition: all 0.3s ease;
+        }
 
-      .navBar p:hover {
-        background-color: rgba(255,255,255,0.5);
-        transform: translateX(-3px);
-      }
+        .navBar p:hover {
+          background-color: rgba(255,255,255,0.5);
+          transform: translateX(-3px);
+        }
 
-      .navBar div {
-        width: 100%;
-        margin-top: 50px;
-        padding: 2px 5px;
-      }
+        .navBar div {
+          width: 100%;
+          margin-top: 50px;
+          padding: 2px 5px;
+        }
 
-      .navBar.active { /* when the navbar active*/
-        transform: translateX(0);
-      }
+        .navBar.active { /* when the navbar active*/
+          transform: translateX(0);
+        }
       /* end of styling the items in navbar for mobile */
 
       /* start of styling the items in navbar for dekstop */
@@ -156,767 +173,777 @@
         }
       /* end of styling the items in navbar for dekstop */
 
-      .content {
-        max-width: 600px;
-        /* margin-top: 70vh; */
-      }
 
-      .content h1 {
-        font-size: 2rem;
-        margin-top: 70vh;
-        text-align: justify;
-        /* color: red; */
-      }
-
-      button {
-        padding: 0.75rem 1.5rem;
-        background: transparent;
-        border: 2px solid white;
-        color: white;
-        cursor: pointer;
-        font-size: 1rem;
-        transition: 0.3s;
-      }
-
-      button:hover {
-        background: white;
-        color: black;
-      }
-
-      .mute-icon {
-        position: absolute;
-        bottom: 2rem;
-        right: 2rem;
-        font-size: 1.5rem;
-        cursor: pointer;
-      }
-      /* hero end */
-
-      .container {
-        display: flex;
-        flex-direction: row;
-        height: 100vh;
-        width: 100%;
-      }
-
-      .left-section {
-        flex: 1;
-        background-color: white;
-        padding: 4rem 3rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      .left-section .logo {
-        margin-bottom: 3rem;
-      }
-
-      .left-section h1 {
-        font-size: 2.8rem;
-        margin-bottom: 1.5rem;
-        font-weight: 700;
-        color: black;
-      }
-
-      .left-section p {
-        color: gray;
-        font-size: 1.1rem;
-        margin-bottom: 2rem;
-      }
-
-      .left-section button {
-        padding: 0.8rem 1.5rem;
-        background: transparent;
-        border: 2px solid rgb(0, 0, 0);
-        color: black;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: 0.3s;
-      }
-
-      .left-section button:hover {
-        background: rgb(0, 0, 0);
-        color: white;
-      }
-
-      .right-section {
-        flex: 1;
-        background: linear-gradient(to top right, rgb(33, 34, 34), #7d848f);
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        padding: 2rem;
-      }
-
-      .right-section .logo-icon {
-        font-size: 4rem;
-        margin: auto;
-      }
-      
-      /* start of hidden the navMobile */
-      .navMobile {
-        display: none;
-      }
-      /* end of hidden the navMobile */
-
-      /* Responsive */
-      @media (max-width: 768px) {
-        .container {
-          flex-direction: column;
-        
+      /* start of styling the section 1 */
+        .section1 {
+          max-width: 600px;
+          /* margin-top: 70vh; */
         }
 
-        .left-section,
-        .right-section {
-          flex: unset;
-          width: 100%;
-          height: auto;
-        }
-
-        /* start of make the height of left section 2 on mobile seems correct */
-        .left-section{
-          height: 100vh;
-        }
-        /* end of make the height of left section 2 on mobile seems correct */
-        
-        .left-section h1 {
+        .section1 h1 {
           font-size: 2rem;
+          margin-top: 70vh;
+          text-align: justify;
+          /* color: red; */
+        }
+      /* start of styling the section 1 */
+
+      /* start of styling the button */
+        button {
+          padding: 0.75rem 1.5rem;
+          background: transparent;
+          border: 2px solid white;
+          color: white;
+          cursor: pointer;
+          font-size: 1rem;
+          transition: 0.3s;
+        }
+
+        button:hover {
+          background: white;
+          color: black;
+        }
+      /* end of styling the button */
+
+      /* start of styling the mute icon */
+        .mute-icon {
+          position: absolute;
+          bottom: 2rem;
+          right: 2rem;
+          font-size: 1.5rem;
+          cursor: pointer;
+        }
+      /* end of styling the mute icon */
+
+      /* start of styling the container */
+        .container {
+          display: flex;
+          flex-direction: row;
+          height: 100vh;
+          width: 100%;
+        }
+      /* end of styling the container */
+
+      /* start of styling section 2 */
+        .left-section {
+          flex: 1;
+          background-color: white;
+          padding: 4rem 3rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        .left-section .logo {
+          margin-bottom: 3rem;
+        }
+
+        .left-section h1 {
+          font-size: 2.8rem;
+          margin-bottom: 1.5rem;
+          font-weight: 700;
+          color: black;
         }
 
         .left-section p {
+          color: gray;
+          font-size: 1.1rem;
+          margin-bottom: 2rem;
+        }
+
+        .left-section button {
+          padding: 0.8rem 1.5rem;
+          background: transparent;
+          border: 2px solid rgb(0, 0, 0);
+          color: black;
           font-size: 1rem;
+          cursor: pointer;
+          transition: 0.3s;
+        }
+
+        .left-section button:hover {
+          background: rgb(0, 0, 0);
+          color: white;
+        }
+
+        .right-section {
+          flex: 1;
+          background: linear-gradient(to top right, rgb(33, 34, 34), #7d848f);
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          padding: 2rem;
         }
 
         .right-section .logo-icon {
-          font-size: 3rem;
+          font-size: 4rem;
+          margin: auto;
         }
-
-        /* repair the text of content on mobile */
-        .content h1 {
-          font-size: 1rem;
-          margin-top: 70vh;
-          text-align: justify;
-        }
-        /* repair the text of content on mobile */
-
-        /* start of making the header turn into blue when enter the section 2 on mobile interface */
-        .logo.active, .menu.active{
-          color: rgb(35, 35, 35);
-        }
-        /* end of making the header turn into blue when enter the section 2 on mobile interface */
-
-        /* start of toggle the navbar */
+      /* end of styling section 2 */
+      
+      /* start of hidden the navMobile */
         .navMobile {
+          display: none;
+        }
+      /* end of hidden the navMobile */
+
+
+      /* start of styling section 2 image */
+        .right-section .logo-icon img {
+          max-width: 50%;
+          height: auto;
+          display: block;
+          margin: auto;
+        }
+      /* end of styling section 2 image */
+
+
+      /* start of styling section3 */
+        #section3 {
           display: flex;
         }
 
-        .navDesktop {
-          display: none;
-        }
-        /* end of toggle the navbar */
-
-        /* start of styling the section 3 on mobile interface */
-        #section3 {
-          flex-direction: column;
-        }
-
-        .sec3-left-section, .sec3-right-section{
-          display: unset;
-          width: 100%;
-        }
-
         .sec3-left-section{
-          height: 10vh;
           width: 100%;
-          object-fit: cover;
+          height: 70vh;
         }
 
         .sec3-right-section{
           width: 100%;
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 2rem;
+          background-color: #f4f4f4;
         }
 
         .sec3-right-section p {
-          font-size: 2rem;
+          font-size: 1rem;
           font-weight: bold;
           text-align: center;
         }
-      /* end of styling the section 3 on mobile interface */
-      
-      /* start of section footer styling for mobile */
-         #sectionFooter {
-          flex-direction: column;
-          align-items: center; 
-          /* padding: 2rem; */
-          height: auto; 
-          /* gap: 2rem; */
-        }
+      /* end of styling section 3 */
 
-        .footer-left-section {
+
+      /* start of styling image into section3 */
+        .section3-image img{
           width: 100%;
-          text-align: justify;
-          align-items: center;
+          height: 100vh;
+          object-fit: cover; 
+          /* border: 10px solid black; */
         }
+      /* end of styling image into section3 */
 
-        .footer-left-section img {
-          width: 120px; 
-          margin-bottom: 0.3rem;
-        }
 
-        .footer-left-section p{
-          font-size: 10px;
-        }
-
-        .footer-middle-section {
-          width: 40%;
-          /* margin-top: 0;
-          margin-left: -30vh; */
-        }
-
-        .subNav {
-          text-align: center;
-          margin-left: 0;
-        }
-        
-        .footer-middle-section nav{
-          display: flex;
-          align-items: center;
-          border: 1px solid black;
-        }
-
-        .footer-middle-section nav {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          padding: 0;
-          gap: 0.5rem;
-          border: 1px solid black;
-        }
-
-        .menu-footer p {
-          font-size: 1rem;
-        }
-
-        .footer-right-section {
-          width: 15%;
-          /* font-size: 1rem; */
-          text-align: justify;
-          /* height: 10vh; */
-        
-        }
-
-        .footer-right-section p {
-          /* text-align: justify; */
-          margin-top: -10px;
-          font-size: 1rem;
-        }
-
-        .footer-bottom-section-atMobile {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: start;
+      /* start of styling section4 */
+        #section4 {
           width: 100%;
-          /* margin-top: 0.5rem; */
-          gap: 1rem;
-          /* padding: 0; */
-          align-items: stretch;
-          /* grid-template-columns: 40% 55%; */
+          height: 100vh;
+          background-color: rgba(0, 0, 0, 0.800); 
+          display: flex;
+          justify-content: center; 
+          align-items: center;     
+        }
+
+        #section4 q {
+        font-size: 2rem;
+        color: white;   
+        text-align: center;
+        max-width: 80%;  
+        }
+      /* end of styling section4 */
+
+
+      /* start of styling section footer */
+        #sectionFooter{
+          width: 100%;
+          background-color: white;
+          height: auto;
         }
 
         #sectionFooter, .footer-bottom-section-atMobile {
-          padding: 0;
+          display: flex;
+          justify-content: space-around;
+          align-items: stretch;
+          padding: 2rem;
+          margin: 0 auto;
         }
-      /* end oof section footer styling for mobile */
 
-      }
+        .footer-left-section {
+          display: flex;
+          flex-direction: column;
+          align-items: left;
+          text-align: justify;
+          height: 100%;
+          width: 90%;
+        }
 
+        .footer-left-section img {
+          width: 150px;
+          margin-bottom: 1rem;
+        }
 
-      /* about image start */
-      .right-section .logo-icon img {
-        max-width: 50%;
-        height: auto;
-        display: block;
-        margin: auto;
-      }
-      /* about image end */
+        .footer-right-section p{
+          text-align: left;
+        }
 
-      /* start of styling section3 */
-      #section3 {
-        display: flex;
-      }
+        .footer-middle-section{
+          height: 100%;
+          width: 10vh;
+          margin-top: 25px;
+          
+        }
 
-      .sec3-left-section{
-        width: 100%;
-        height: 70vh;
-      }
+        .footer-middle-section nav{
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          align-items: center;
+          padding: 0 1.3rem 2rem 1.3rem;
+          transition: 0.45s;
+        }
 
-      .sec3-right-section{
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 2rem;
-        background-color: #f4f4f4;
-      }
+        .menu-footer p {
+          transition:  0.3s ease;
+          cursor: pointer;
+          font-size: 1rem;
+        }
 
-      .sec3-right-section p {
-        font-size: 1rem;
-        font-weight: bold;
-        text-align: center;
-      }
-      /* end of styling section3 */
+        .menu-footer p:hover {
+          color: #c62222;
+          font-size: larger;
+        }
 
-      /* start of styling section4 */
-      #section4 {
-        width: 100%;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.800); 
-        display: flex;
-        justify-content: center; 
-        align-items: center;     
-      }
+        .subNav{
+          font-size: 1.5rem;
+          margin-left: -17px;
+          text-align: left;
+        }
 
-      #section4 q {
-      font-size: 2rem;
-      color: white;   
-      text-align: center;
-      max-width: 80%;  
-      }
-      /* end of styling section4 */
+        .footer-right-section {
+          height: 100%;
+          font-size: 1.2rem;
+          width: 50%;
+          margin-top: 20px;
+        }
 
-      /* start of styling section footer */
-      #sectionFooter{
-        width: 100%;
-        background-color: white;
-        height: auto;
-        /* margin-left: 100px; */
-      }
-
-      #sectionFooter, .footer-bottom-section-atMobile {
-        display: flex;
-        justify-content: space-around;
-        align-items: stretch;
-        padding: 2rem;
-        margin: 0 auto;
-      }
-
-      .footer-left-section {
-        display: flex;
-        flex-direction: column;
-        align-items: left;
-        text-align: justify;
-        height: 100%;
-        width: 90%;
-      }
-
-      .footer-left-section img {
-        width: 150px;
-        margin-bottom: 1rem;
-      }
-
-      .footer-right-section p{
-        text-align: left;
-      }
-
-      .footer-middle-section{
-        height: 100%;
-        width: 10vh;
-        margin-top: 25px;
-        
-      }
-
-      .footer-middle-section nav{
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        align-items: center;
-        /* border: 1px solid black; */
-        padding: 0 1.3rem 2rem 1.3rem;
-        transition: 0.45s;
-      }
-
-      .menu-footer p {
-        transition:  0.3s ease;
-        cursor: pointer;
-        font-size: 1rem;
-      }
-
-      .menu-footer p:hover {
-        color: #c62222;
-        font-size: larger;
-      }
-
-      .subNav{
-        font-size: 1.5rem;
-        /* margin-bottom: -1rem; */
-        margin-left: -17px;
-        text-align: left;
-      }
-
-      .footer-right-section {
-        height: 100%;
-        font-size: 1.2rem;
-        width: 50%;
-        margin-top: 20px;
-      }
-
-      .footer-right-section p {
-        text-align: justify;
-      }
+        .footer-right-section p {
+          text-align: justify;
+        }
       /* end of styling section footer */
 
-      /* start of styling image into section3 */
-      .section3-image img{
-        width: 100%;
-        height: 100vh;
-        object-fit: cover; 
-        /* border: 10px solid black; */
-      }
-      /* end of styling image into section3 */
 
-      /* start of add sticky header */
-      #header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        padding: 15px;
-        width: 100%;
-        z-index: 1500;
-      }
-      /* end of sticky header */
+
+      /* start of styling the Mobile Interface */
+        @media (max-width: 768px) {
+          /* start of styling container vertically */
+            .container {
+              flex-direction: column;
+            }
+          /* end of styling container vertically */
+
+
+          /* start of making the header turn into blue when enter the section 2 on mobile interface */
+            .logo.active, .menu.active{
+              color: rgb(35, 35, 35);
+            }
+          /* end of making the header turn into blue when enter the section 2 on mobile interface */
+
+
+          /* start of fix section 1 on mobile */
+            .section1 h1 {
+              font-size: 1rem;
+              margin-top: 70vh;
+              text-align: justify;
+            }
+          /* end of fix section 1 on mobile */
+
+
+          /* start of styling section 2 on mobile */
+            .left-section,
+            .right-section {
+              flex: unset;
+              width: 100%;
+              height: auto;
+            }
+
+              /* start of fixing the height of section 2 */
+                .left-section{
+                  height: 100vh;
+                }
+              /* end of fixing the height of section 2 */
+            
+            .left-section h1 {
+              font-size: 2rem;
+            }
+
+            .left-section p {
+              font-size: 1rem;
+            }
+
+            .right-section .logo-icon {
+              font-size: 3rem;
+            }
+          /* end of styling section 2 on mobile */
+
+
+          /* start of toggle the navbar on mobile */
+            .navMobile {
+              display: flex;
+            }
+
+            .navDesktop {
+              display: none;
+            }
+          /* end of toggle the navbar on mobile */
+
+
+          /* start of styling the section 3 on mobile interface */
+            #section3 {
+              flex-direction: column;
+            }
+
+            .sec3-left-section, .sec3-right-section{
+              display: unset;
+              width: 100%;
+            }
+
+            .sec3-left-section{
+              height: 10vh;
+              width: 100%;
+              object-fit: cover;
+            }
+
+            .sec3-right-section{
+              width: 100%;
+            }
+
+            .sec3-right-section p {
+              font-size: 2rem;
+              font-weight: bold;
+              text-align: center;
+            }
+          /* end of styling the section 3 on mobile interface */
+        
+          /* start of section footer styling for mobile */
+            #sectionFooter {
+              flex-direction: column;
+              align-items: center; 
+              height: auto; 
+            }
+
+            .footer-left-section {
+              width: 100%;
+              text-align: justify;
+              align-items: center;
+            }
+
+            .footer-left-section img {
+              width: 120px; 
+              margin-bottom: 0.3rem;
+            }
+
+            .footer-left-section p{
+              font-size: 10px;
+            }
+
+            .footer-middle-section {
+              width: 40%;
+            }
+
+            .subNav {
+              text-align: center;
+              margin-left: 0;
+            }
+            
+            .footer-middle-section nav{
+              display: flex;
+              align-items: center;
+              border: 1px solid black;
+            }
+
+            .footer-middle-section nav {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              padding: 0;
+              gap: 0.5rem;
+              border: 1px solid black;
+            }
+
+            .menu-footer p {
+              font-size: 1rem;
+            }
+
+            .footer-right-section {
+              width: 15%;
+              text-align: justify;            
+            }
+
+            .footer-right-section p {
+              margin-top: -10px;
+              font-size: 1rem;
+            }
+
+            .footer-bottom-section-atMobile {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: start;
+              width: 100%;
+              gap: 1rem;
+              align-items: stretch;
+            }
+
+            #sectionFooter, .footer-bottom-section-atMobile {
+              padding: 0;
+            }
+          /* end of section footer styling for mobile */
+        }
+      /* end of styling the Mobile Interface */
+
 
       /* Start of styling navbar when they comes to the section 3 */
-      .specialColor {
-        color: red;
-      }
-
-      .specialColor p {
-          transition: all 0.3s ease;
-          cursor: pointer;
+        .specialColor {
+          color: red;
         }
 
-      .specialColor p:hover { 
-        color: rgba(0, 255, 13, 0.5);
-        transform: translateX(-3px);
-        font-weight: 500;
-      }
+        .specialColor p {
+            transition: all 0.3s ease;
+            cursor: pointer;
+          }
+
+        .specialColor p:hover { 
+          color: rgba(0, 255, 13, 0.5);
+          transform: translateX(-3px);
+          font-weight: 500;
+        }
       /* end of styling navbar when they comes to the section 3 */
 
-      /* Start of styling navbar when they comes to the section 1 */
-      .defaultColor {
-        color: rgb(255, 255, 255);
-      }
 
-      .defaultColor p {
-          transition: all 0.3s ease;
-          cursor: pointer;
+      /* Start of styling navbar when they comes to the section 1 */
+        .defaultColor {
+          color: rgb(255, 255, 255);
         }
+
+        .defaultColor p {
+            transition: all 0.3s ease;
+            cursor: pointer;
+          }
       /* end of styling navbar when they comes to the section 1 */
     </style>
   </head>
   <body>
-    <video autoplay muted loop id="bgVideo">
-      <source src="hero.mp4" type="video/mp4" />
-      Your browser does not support HTML5 video.
-    </video>
+    <!-- start of adding bg video -->
+      <video autoplay muted loop id="bgVideo">
+        <source src="hero.mp4" type="video/mp4" />
+        Your browser does not support HTML5 video.
+      </video>
+    <!-- end of adding bg video -->
 
-    <section class="overlay" id="section1" changeTitle>
-      <header id="header">
-        <div class="logo">Hogwards</div>
-        <!-- for dekstrop interface -->
-        <nav class="navDesktop">
-          <p target="section1">Home</p>
-          <p target="section2">About</p>
-          <p target="section3">Gundam</p>
-          <p target="section4">Quotes</p>
-          <p target="sectionFooter">Footer</p>
-        </nav>
+      <section class="overlay" id="section1" changeTitle>
+        <!-- start of header -->
+          <header id="header">
+            <div class="logo">Hogwards</div>
 
-        <!-- for mobile interface -->
-        <div class="nav-right-section">
-          <div class="menu navMobile">☰</div>
+            <!-- Start of making NavBar for dekstrop interface -->
+              <nav class="navDesktop">
+                <p target="section1">Home</p>
+                <p target="section2">About</p>
+                <p target="section3">Hogwards</p>
+                <p target="section4">Quotes</p>
+                <p target="sectionFooter">Footer</p>
+              </nav>
+            <!-- end of making NavBar for dekstrop interface -->
+
+            <!-- Start of making NavBar for mobile interface -->
+              <div class="nav-right-section">
+                <div class="menu navMobile">☰</div>
+              </div>
+              
+              <section class="navBar navMobile">
+                <div>
+                <p target="section1">Home</p>
+                <p target="section2">About</p>
+                <p target="section3">Class</p>
+                <p target="section4">Catchphrase</p>
+                </div>
+              </section>
+            <!-- end of making NavBar for mobile interface -->
+          </header>
+        <!-- End of header -->
+
+        <!-- Start of section 1 -->
+          <section class="section1">
+            <h1>
+              the capital of the Kingdom of the North and the seat and the ancestral home of the royal House Stark.
+            </h1>
+            <button>More</button>
+          </section>
+
+          <section class="mute-icon" onclick="toggleMute()">
+            <i id="muteIcon" class="fas fa-volume-mute"></i>
+          </section>
+        <!-- End of section 1 -->
+    </section>
+
+    <!-- Start of section 2 -->
+      <section class="container" id="section2" changeTitle>
+        <section class="left-section">
+          <h1>Hogwards</h1>
+          <p>
+            Hogwarts School of Witchcraft and Wizardry is a boarding school of magic for young wizards.
+          </p>
+          <button>More</button>
+        </section>
+        <section class="right-section">
+          <div class="logo-icon"><img src="class.png" alt="" /></div>
+        </section>
+      </section>
+    <!-- End of section 2 -->
+
+    <!-- start section 3 -->
+      <section class="container" id="section3" changeTitle>
+        <section class="sec3-left-section">
+          <div class="section3-image"><img src="about.png" alt="" /></div>
+        </section>
+        <section class="sec3-right-section">
+          <p>
+            the Independent Schools Network Rankings website featured Hogwarts on a list of the best schools in Scotland. 
+          </p>
+        </section>
+      </section>
+    <!-- end of section 3 -->
+
+    <!-- start section 4 -->
+      <section class="container" id="section4" changeTitle>
+        <div id="mainSect4">
+          <q>Draco Dormiens Nunquam Titillandus</q>
         </div>
-        
-        <section class="navBar navMobile">
-          <div>
-          <p target="section1">Home</p>
-          <p target="section2">About</p>
-          <p target="section3">Class</p>
-          <p target="section4">Catchphrase</p>
-          </div>
-        </section>
-        <!-- for mobile interface -->
-      </header>
-
-      <section class="content">
-        <h1>
-          the capital of the Kingdom of the North and the seat and the ancestral home of the royal House Stark.
-        </h1>
-        <button>More</button>
       </section>
+    <!-- start of section 4 -->
 
-      <section class="mute-icon" onclick="toggleMute()">
-        <i id="muteIcon" class="fas fa-volume-mute"></i>
-      </section>
-    </section>
-
-    <section class="container" id="section2" changeTitle>
-      <section class="left-section">
-        <h1>Hogwards</h1>
-        <p>
-           Hogwarts School of Witchcraft and Wizardry is a boarding school of magic for young wizards.
-        </p>
-        <button>More</button>
-      </section>
-      <section class="right-section">
-        <div class="logo-icon"><img src="class.png" alt="" /></div>
-        <!-- You can replace this with your actual white blob icon/logo -->
-      </section>
-    </section>
-
-    <!-- start of adding section 3 to web -->
-    <section class="container" id="section3" changeTitle>
-      <section class="sec3-left-section">
-        <div class="section3-image"><img src="about.png" alt="" /></div>
-      </section>
-      <section class="sec3-right-section">
-        <p>
-          the Independent Schools Network Rankings website featured Hogwarts on a list of the best schools in Scotland. 
-        </p>
-      </section>
-    </section>
-    <!-- end of adding section 3 to web -->
-
-    <!-- start of adding section 4 to web -->
-    <section class="container" id="section4" changeTitle>
-      <div id="mainSect4">
-        <q>Draco Dormiens Nunquam Titillandus</q>
-      </div>
-    </section>
-    <!-- start of adding section 4 to web -->
-
-    <!-- start of adding section footer to web -->
-    <section class="container" id="sectionFooter" changeTitle>
-      <section class="footer-left-section">
-        <p>
-          The Hogwarts School of Witchcraft and Wizardry's  
-        </p>
-      </section>  
-      <section class="footer-bottom-section-atMobile">
-        <section class="footer-middle-section">
-          <h2 class="subNav">
-            Menu
-          </h2>
-          <nav class="menu-footer">
-          <p target="section1">Home</p>
-          <p target="section2">About</p>
-          <p target="section3">Gundam</p>
-          <p target="section4">Quotes</p>
-          <p target="sectionFooter">Footer</p>
-          </nav>
-        </section>
-        <section class="footer-right-section">
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque ea non obcaecati consectetur nihil nam vero odio sit facilis nesciunt molestiae, excepturi aperiam corporis eligendi error dolores blanditiis voluptate similique.</p>
+    <!-- start of section footer -->
+      <section class="container" id="sectionFooter" changeTitle>
+        <section class="footer-left-section">
+          <p>
+            The Hogwarts School of Witchcraft and Wizardry's  
+          </p>
+        </section>  
+        <section class="footer-bottom-section-atMobile">
+          <section class="footer-middle-section">
+            <h2 class="subNav">
+              Menu
+            </h2>
+            <nav class="menu-footer">
+            <p target="section1">Home</p>
+            <p target="section2">About</p>
+            <p target="section3">Hogwards</p>
+            <p target="section4">Quotes</p>
+            <p target="sectionFooter">Footer</p>
+            </nav>
+          </section>
+          <section class="footer-right-section">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque ea non obcaecati consectetur nihil nam vero odio sit facilis nesciunt molestiae, excepturi aperiam corporis eligendi error dolores blanditiis voluptate similique.</p>
+          </section>
         </section>
       </section>
-    </section>
-    <!-- end of adding section footer to web -->
+    <!-- end of section footer -->
 
     <script>
+      /* Start of set variables for mute video */
       const video = document.getElementById("bgVideo");
       const icon = document.getElementById("muteIcon");
+      /* end of set variables for mute video */
 
-      /* start of set variable for scroll animation */
+
+      /* start of set variables for scroll animation */
       const section1 = document.getElementById("section1");
       const section2 = document.getElementById("section2");
       const section3 = document.getElementById("section3");
       const section4 = document.getElementById("section4");
       const sectionFooter = document.getElementById("sectionFooter")
       const section = [section1, section2, section3, section4, sectionFooter];
-      /* end of set variable for scroll animation */
+      /* end of set variables for scroll animation */
 
-      /* start of set variabel for summon navbar */      
+
+      /* start of set variables for summon navbar */      
       const navBarButton = document.querySelector('.menu');
       const navBar = document.querySelector('.navBar');
-      /* end of set variabel for summon navbar */
+      /* end of set variables for summon navbar */
 
 
+      /* start of toggle mute function */
       function toggleMute() {
         video.muted = !video.muted;
         icon.className = video.muted
           ? "fas fa-volume-mute"
           : "fas fa-volume-up";
       }
+      /* end of toggle mute function */
 
-      /* start of disabling the scroll */
-      function disableScroll() {
-        /*untuk cegah scroll*/
-        window.addEventListener('wheel', preventScroll, { passive: false });
-        window.addEventListener('touchmove', preventScroll, { passive: false });        
-        console.log("bastian becik")
-      }
 
-      function enableScroll() {
-        // document.body.style.overflow = '';
-        console.log("bastian ala")
-        window.addEventListener('wheel', preventScroll, { passive: true });
-        window.addEventListener('touchmove', preventScroll, { passive: true });   
-      }
+      /* start of making program to prevent spam scroll */
+        function disableScroll() {
+          window.addEventListener('wheel', preventScroll, { passive: false });
+          window.addEventListener('touchmove', preventScroll, { passive: false });        
+        }
 
-      function preventScroll(e){
-        e.preventDefault();
-      }
-      /* end of disabling the scroll */      
+        function enableScroll() {
+          window.addEventListener('wheel', preventScroll, { passive: true });
+          window.addEventListener('touchmove', preventScroll, { passive: true });   
+        }
+
+        function preventScroll(e){
+          e.preventDefault();
+        }
+      /* end of making program to prevent spam scroll */   
+
 
       /* start of making scroll animation */
-      let scroll = false;
-      let currentIndex = 0; // add the current index for scroll animation
+        let scroll = false;
+        let currentIndex = 0;
 
         /* start of making the array function to change index of section */
-        function changeSection (direction) {
-          if (scroll) return;
-          scroll = true;
-          disableScroll();
+          function changeSection (direction) {
+            if (scroll) return;
+            scroll = true;
+            disableScroll();
 
-          if (direction === 'down' && currentIndex < section.length - 1) {
-            /* start of fixing the scroll animation for mobile */
-            if (currentIndex === 0 & window.innerWidth <= 768) {
-              currentIndex++
-              window.scrollBy({
-                top: 745,
-                behavior: 'smooth'
-              });
-              setTimeout(() => {
-                scroll = false;
-                enableScroll();
-              }, 500);
-              return;
+            if (direction === 'down' && currentIndex < section.length - 1) {
+              if (currentIndex === 0 & window.innerWidth <= 768) {
+                currentIndex++
+                window.scrollBy({
+                  top: 745,
+                  behavior: 'smooth'
+                });
+                setTimeout(() => {
+                  scroll = false;
+                  enableScroll();
+                }, 500);
+                return;
+              } else {
+                currentIndex++;
+              }
+            } else if (direction === 'up' && currentIndex > 0) {
+              currentIndex--;
             } else {
-              currentIndex++;
+              console.error('index\'e udah nol')
             }
-            /* end of fixing the scroll animation for mobile */
-          // } else if (direction === 'down' && currentIndex === 4) {
-          //   enableScroll();
-          } else if (direction === 'up' && currentIndex > 0) {
-            currentIndex--;
-          } else {
-            console.error('index\'e udah nol')
+
+            const targetPost = section[currentIndex].offsetTop; // Mendapatkan posisi atas dari section yang dituju
+            window.scrollTo({ top: targetPost, behavior: 'smooth' }); // Melakukan scroll ke posisi tersebut
+
+            setTimeout(() => {
+              scroll = false;
+              enableScroll();
+            }, 1000);
           }
+        /* end of  making the array function to change index of section */
 
-          const targetPost = section[currentIndex].offsetTop;
-          window.scrollTo({ top: targetPost, behavior: 'smooth' });
+        /* start of handling the scroll event */
+          window.addEventListener('wheel', function (event) {
+            if (scroll) return;
+            if (event.deltaY > 50) {
+              changeSection('down');
+            } else if (event.deltaY < -50) {
+              changeSection('up');
+            }
+          }, { passive: false });
+        /* End of handling the scroll event */
 
-          setTimeout(() => {
-            scroll = false;
-            enableScroll();
-          }, 1000);
-        }
-        /* end of making the array function to change index of section */
-
-
-      /* start of making scroll animation */
-      window.addEventListener('wheel', function (event) {
-        if (scroll) return;
-        if (event.deltaY > 50) {
-          changeSection('down');
-        } else if (event.deltaY < -50) {
-          changeSection('up');
-        }
-      }, { passive: false });
       /* end of making scroll animation */
 
-      /* start of making the winterfell turn into other colors when enter other section */
-      window.addEventListener('load', (event) => {
-        const titleChanger = document.querySelectorAll('*[changeTitle]');
-        let currentTarget = null;
 
-        const Observer = new IntersectionObserver((entries, Observer) => {
-          for (const entry of entries) {
-            if (entry.isIntersecting) {
-              currentTarget = entry.target;
-              addColor(true, '.logo');
-              addColor(true, '.menu');
-              addColor(true, '.navDesktop');
-            } else {
+      /* start of making the header turn into other colors when enter other section */
+        window.addEventListener('load', (event) => {
+          const titleChanger = document.querySelectorAll('*[changeTitle]');
+          let currentTarget = null;
+
+          const Observer = new IntersectionObserver((entries, Observer) => {
+            for (const entry of entries) {
+              if (entry.isIntersecting) {
+                currentTarget = entry.target;
+                addColor(true, '.logo');
+                addColor(true, '.menu');
+                addColor(true, '.navDesktop');
+              } else {
+                addColor(false, '.logo');
+                addColor(false, '.menu');
+                addColor(false, '.navDesktop');
+              }
+            }
+          }, { threshold: 0.15 });
+
+          for (const element of titleChanger) {
+            Observer.observe(element);
+          }
+
+          function watchTarget() {
+            const bounds = currentTarget.getBoundingClientRect();
+
+            if (bounds.bottom < window.innerHeight - 80) {
               addColor(false, '.logo');
               addColor(false, '.menu');
-              addColor(false, '.navDesktop');
+            } else {
+              addColor(true, '.logo');
+              addColor(true, '.menu');
             }
           }
-        }, { threshold: 0.15 });
 
-        for (const element of titleChanger) {
-          Observer.observe(element);
-        }
-
-        function watchTarget() {
-          const bounds = currentTarget.getBoundingClientRect();
-
-          if (bounds.bottom < window.innerHeight - 80) {
-            addColor(false, '.logo');
-            addColor(false, '.menu');
-          } else {
-            addColor(true, '.logo');
-            addColor(true, '.menu');
-          }
-        }
-
-        function addColor(add, classSelector) {
-          const logo = document.querySelector(classSelector);
-          if (add) {
-            if (currentTarget.id ===  'section2') {
-              logo.classList.add('active');
-              logo.classList.remove('specialColor');
-              logo.classList.remove('defaultColor');
-              console.log('lagi di section 2');
-            } else if (currentTarget.id === 'section3'){
-              logo.classList.add('specialColor');
-              logo.classList.remove('active');
-              console.log('lagi di section 3')
-              logo.classList.remove('defaultColor');
-            } else{
-              logo.classList.remove('active');
-              logo.classList.remove('specialColor');
-              console.log('lagi di section 1 atau yang lain');
-              logo.classList.add("defaultColor");
+          function addColor(add, classSelector) {
+            const logo = document.querySelector(classSelector);
+            if (add) {
+              if (currentTarget.id ===  'section2') {
+                logo.classList.add('active');
+                logo.classList.remove('specialColor');
+                logo.classList.remove('defaultColor');
+                console.log('lagi di section 2');
+              } else if (currentTarget.id === 'section3'){
+                logo.classList.add('specialColor');
+                logo.classList.remove('active');
+                console.log('lagi di section 3')
+                logo.classList.remove('defaultColor');
+              } else{
+                logo.classList.remove('active');
+                logo.classList.remove('specialColor');
+                console.log('lagi di section 1 atau yang lain');
+                logo.classList.add("defaultColor");
+              }
             }
           }
-        }
-      });
-      /* end of making the winterfell turn into other colours when enter section 2 */
+        });
+      /* end of making the header turn into other colours when enter other section */
+
 
       /* start of making function to summon the navbar on mobile*/
         navBarButton.addEventListener('click', () => {
-        navBar.classList.toggle('active');
-        console.log('tes')
-      });
+          navBar.classList.toggle('active');
+        });
       /* end of making function to summon the navbar on mobile */
 
+
       /* start of making smooth animation to scrolling using navbar */
-      window.addEventListener('DOMContentLoaded', () => {
-        const navItems = document.querySelectorAll('.navDesktop p, .navMobile p, .menu-footer p');
+        window.addEventListener('DOMContentLoaded', () => {
+          const navItems = document.querySelectorAll('.navDesktop p, .navMobile p, .menu-footer p');
 
-        navItems.forEach(item => {
-        item.addEventListener('click', () => {
-        const targetId = item.getAttribute('target');
-        const targetSection = document.getElementById(targetId);
+          navItems.forEach(item => {
+          item.addEventListener('click', () => {
+          const targetId = item.getAttribute('target');
+          const targetSection = document.getElementById(targetId);
 
-            if (targetSection) {
-              targetSection.scrollIntoView({
-                behavior: 'smooth'
-              });
-              console.log("icikiwir")
-            }
+              if (targetSection) {
+                targetSection.scrollIntoView({
+                  behavior: 'smooth'
+                });
+              }
+            });
           });
         });
-      });
-      /* start of making smooth animation to scrolling using navbar */
-
-
+      /* end of making smooth animation to scrolling using navbar */
     </script>
   </body>
 </html>
